@@ -2,13 +2,13 @@ from sqlalchemy import Column, String, Integer, BigInteger, Enum
 from src.utils.db import Base
 from src.utils.enum import UserRole
 
-class Users(Base):
+class UserModel(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
-    username = Column(String(255))
-    email = Column(String(255), nullable=False)
-    password = Column(String(255), nullable=False)
+    username = Column(String(255), unique=True)
+    email = Column(String(255), unique=True, nullable=False)
+    hash_password = Column(String(255), nullable=False)
     last_active = Column(BigInteger)
 
     role = Column(

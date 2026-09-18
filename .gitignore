@@ -2,3 +2,6 @@
 vir/
 __pycache__/
 .env
+test_logins.txt/
+test_logins.txt
+.git*
