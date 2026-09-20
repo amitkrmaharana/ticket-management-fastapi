@@ -24,3 +24,11 @@ class UserResponseSchema(BaseModel):
     username : str
     email : str
     role : UserRole
+
+class UserLoginSchema(BaseModel):
+    email: EmailStr
+    password: str
+
+class UserLoginResponseSchema(BaseModel):
+    token: str
+    type: str | None = "Bearer"
